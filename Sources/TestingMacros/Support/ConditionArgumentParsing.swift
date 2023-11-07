@@ -144,7 +144,7 @@ private func _parseCondition(from expr: ExprSyntax, leftOperand lhs: ExprSyntax,
     "__checkBinaryOperation",
     arguments: [
       Argument(expression: lhs),
-      Argument(expression: "{ $0 \(op.trimmed) $1() }"),
+      Argument(expression: "{ lhs, rhs in lhs \(op.trimmed) rhs() }"),
       Argument(expression: rhs)
     ],
     sourceCode: createSourceCodeExprForBinaryOperation(lhs, op, rhs)
